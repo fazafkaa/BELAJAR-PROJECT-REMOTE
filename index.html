@@ -52,7 +52,7 @@
                         <a class="nav-link mx-3" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-3" href="#portfolio">Portfolio</a>
+                        <a class="nav-link mx-3" href="#portfolio">Cara Kerjanya</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-3" href="#contact">Contact</a>
@@ -171,8 +171,8 @@
         <div id="portfolio" class="container text-center py-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h3 class="fw-bold lh-2 mb-3">OUR PORTFOLIO</h3>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+                    <h3 class="fw-bold lh-2 mb-3">Cara Kerja SVM</h3>
+                    <p class="lead">Setelah membaca dan memahami pengertian SVM dan Konsep Dasarnya, sekarang temen-temn bisa memahami cara kerja algoritma ini dalam mengklasifikasikan data.</p>
                 </div>
             </div>
 
@@ -180,12 +180,17 @@
                 <div class="col-lg-4 mb-4">
                     <div class="card h-100 border-0 rounded-4 shadow-sm">
                         <div class="card-body p-4 pb-0">
-                            <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-aplikasi-kasir-jasa-cuci-mobil-dan-motor" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-aplikasi-kasir-jasa-cuci-mobil-dan-motor.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
-                                </a>
-                            </div>
-                            <p class="fw-semibold">Aplikasi Kasir Jasa Cuci Mobil dan Motor</p>
+                            <p class="fw-semibold"><strong>1. Membangun Klasifikasi SVM </strong></p>
+                            <p class="fw-semibold"><b>*Bagi Data Anda </b><br> Sama seperti model machine learning lainnya, langkah pertamanya adalah membagi data menjadi data latih (train) dan data uji (test). Sebelum masuk ke pemodelan svm, sebaiknya lakukan dulu eksplorasi data awal (EDA). Meskipun tidak wajib secara teknis, langkah ini penting supaya kamu tahu kalo ada data yang kosong atau milai yang menyimpang (outlier)<br>
+                            <b>*Menghasilkan dan mengevaluasi model</b><br>Import modul SVM (misalnya dari scikit-learn), latih model dengan data latih, lalu prediksi data uji. Evaluasi hasilnya menggunakan akurasi serta metrik tambahan seperti precision, recall, dan f1-score.<br> <b>*Penyetelan Hyperparameter</b><br>Performa model SVM bisa ditingkatkan dengan menyetel hyperparameter. Kombinasi terbaiknya seperti jenis kernel, nilai regularisasi(C), dan Gamma dapat dicari menggunakan grid search dam cross-validation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 border-0 rounded-4 shadow-sm">
+                        <div class="card-body p-4 pb-0">
+                            <p class="fw-semibold"><strong>2. Contoh Penggunaan SVM</strong></p>
+                            <p class="fw-semibold"><b>Klasifikasi teks & analisis sentimen</b><br>Memilah ulasan pelanggan menjadi positif atau negatif serta menyaring email spam, karena data teks memiliki banyak fitur (dimensi tinggi).<br><b>Pengenalan wajah & citra</b><br>Membedakan wajah dari latar belakang, mengenali tulisan tangan, mendeteksi manipulasi gambar, atau mengklasifikasikan jenis objek/daun berdasarkan fitur visual.<br><b>Kesehatan & bioinformatika</b><br>Membantu diagnosis medis, klasifikasi ekspresi gen, atau identifikasi pola penyakit berdasarkan data klinis maupun citra medis.<br><b>Keuangan & peramalan</b><br>Mendeteksi penipuan transaksi (fraud) atau memprediksi nilai numerik seperti jumlah pendaftar maupun tren data menggunakan Support Vector Regression (SVR).</p>
                         </div>
                     </div>
                 </div>
@@ -193,62 +198,16 @@
                     <div class="card h-100 border-0 rounded-4 shadow-sm">
                         <div class="card-body p-4 pb-0">
                             <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-aplikasi-manajemen-keuangan-pribadi-single-user" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-aplikasi-manajemen-keuangan-pribadi-single-user.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
+                                <a href="svm.html" target="_blank">
+                                    <img src="assets/img/portfolio/Svm.png" alt="Portfolio" class="card-img-top img-fluid rounded-4">
                                 </a>
                             </div>
-                            <p class="fw-semibold">DompetKu - Aplikasi Manajemen Keuangan Pribadi (Single User)</p>
+                            <p class="fw-semibold"><b>3. Implementasi sederhana SVM</b></p>
+                            <p>Kode tersebut merupakan contoh implementasi sederhana <strong>Support Vector Machine (SVM)</strong> untuk menyortir kualitas produk menjadi <strong>Grade A</strong> atau <strong>Grade B</strong> berdasarkan bobot (gram) dan skor kematangan.</p>
+                            <p>Pada bagian awal, kode mengimpor pustaka <code>numpy</code> untuk mengolah data numerik dan <code>SVC</code> dari <code>scikit-learn</code> untuk membangun model klasifikasi SVM. Selanjutnya disiapkan data fitur <code>X</code> berisi enam sampel <code>[bobot_gram, skor_kematangan]</code> serta label target <code>y</code> dengan nilai <code>1</code> untuk <strong>Grade A</strong> (layak jual utama) dan <code>0</code> untuk <strong>Grade B</strong> (sortir/olahan).</p>
+                            <p>Setelah data siap, model dibuat menggunakan <code>SVC(kernel="linear", C=1.0)</code> untuk mencari batas pemisah garis lurus lalu dilatih dengan <code>model.fit(X, y)</code>. Terakhir, model memprediksi <code>data_baru</code> (<code>[125, 8.2]</code> dan <code>[75, 4.2]</code>) melalui <code>model.predict(data_baru)</code>, kemudian perulangan <code>for</code> mengubah label <code>1</code> dan <code>0</code> menjadi status <code>"Grade A"</code> atau <code>"Grade B"</code> sekaligus mencetak hasilnya ke layar.</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-4 pb-0">
-                            <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-aplikasi-manajemen-kas-berbasis-web" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-aplikasi-manajemen-kas-berbasis-web.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
-                                </a>
-                            </div>
-                            <p class="fw-semibold">Aplikasi Manajemen Kas Berbasis Web</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-4 pb-0">
-                            <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-aplikasi-kasir-penjualan-pulsa" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-aplikasi-kasir-penjualan-pulsa.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
-                                </a>
-                            </div>
-                            <p class="fw-semibold">Aplikasi Kasir Penjualan Pulsa</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-4 pb-0">
-                            <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-aplikasi-pengelolaan-arsip-surat" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-aplikasi-pengelolaan-arsip-surat.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
-                                </a>
-                            </div>
-                            <p class="fw-semibold">Aplikasi Pengelolaan Arsip Surat</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-4 pb-0">
-                            <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-sistem-informasi-persediaan-barang-gudang-material" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-sistem-informasi-persediaan-barang-gudang-material.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
-                                </a>
-                            </div>
-                            <p class="fw-semibold">Sistem Informasi Persediaan Barang Gudang Material</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
