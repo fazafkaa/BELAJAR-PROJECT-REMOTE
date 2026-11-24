@@ -95,50 +95,164 @@
             </div>
         </div>
 
-        <!-- Services -->
-        <div id="services" class="container text-center py-5">
-            <div class="row">
+        <!-- What It Is (Teori Utama) -->
+        <div id="services" class="container py-5">
+            <div class="row text-center">
                 <div class="col-lg-8 mx-auto">
-                    <h3 class="fw-bold lh-2 mb-3">OUR SERVICES</h3>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+                    <h3 class="fw-bold lh-2 mb-2">WHAT IT IS</h3>
+                    <p class="lead text-primary fw-semibold mb-0">Teori Utama</p>
                 </div>
             </div>
 
-            <div class="row py-4">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <div class="card border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-3 p-sm-5">
-                            <div class="feature-icon-1 bg-primary bg-gradient mb-4">
-                                <i class="bi-filetype-html"></i>
-                            </div>
-                            <h3>Web Design</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-                        </div>
-                    </div>
+            <!-- Deck: daftar slide di kiri, slide aktif di kanan (seperti PowerPoint) -->
+            <div id="svm-deck" class="svm-deck rounded-4 shadow-sm my-5">
+                <div class="svm-rail" role="tablist" aria-label="Daftar slide Teori Utama">
+                    <button type="button" role="tab" id="svm-tab-1" class="svm-thumb" aria-selected="true" aria-controls="svm-panel-1">
+                        <span class="svm-thumb-n">1</span><span class="svm-thumb-t">Pengertian SVM</span>
+                    </button>
+                    <button type="button" role="tab" id="svm-tab-2" class="svm-thumb" aria-selected="false" aria-controls="svm-panel-2" tabindex="-1">
+                        <span class="svm-thumb-n">2</span><span class="svm-thumb-t">Sejarah SVM</span>
+                    </button>
+                    <button type="button" role="tab" id="svm-tab-3" class="svm-thumb" aria-selected="false" aria-controls="svm-panel-3" tabindex="-1">
+                        <span class="svm-thumb-n">3</span><span class="svm-thumb-t">Tujuan SVM</span>
+                    </button>
+                    <button type="button" role="tab" id="svm-tab-4" class="svm-thumb" aria-selected="false" aria-controls="svm-panel-4" tabindex="-1">
+                        <span class="svm-thumb-n">4</span><span class="svm-thumb-t">Kelebihan dan Kekurangan</span>
+                    </button>
+                    <button type="button" role="tab" id="svm-tab-5" class="svm-thumb" aria-selected="false" aria-controls="svm-panel-5" tabindex="-1">
+                        <span class="svm-thumb-n">5</span><span class="svm-thumb-t">Karakteristik Algoritma</span>
+                    </button>
                 </div>
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <div class="card border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-3 p-sm-5">
-                            <div class="feature-icon-1 bg-primary bg-gradient mb-4">
-                                <i class="bi-code-slash"></i>
+
+                <div class="svm-stage">
+                    <div class="svm-text">
+                        <article id="svm-panel-1" class="svm-panel" role="tabpanel" aria-labelledby="svm-tab-1" data-focus="hyperplane">
+                            <h4 class="svm-title">Pengertian SVM</h4>
+                            <p class="svm-body">Algoritma <em>supervised learning</em> untuk klasifikasi dan regresi yang mencari batas pemisah (<em>hyperplane</em>) optimal antar kelas.</p>
+                        </article>
+
+                        <article id="svm-panel-2" class="svm-panel" role="tabpanel" aria-labelledby="svm-tab-2" data-focus="none" hidden>
+                            <h4 class="svm-title">Sejarah SVM</h4>
+                            <p class="svm-body">Dikembangkan Vladimir Vapnik dan rekan-rekan pada awal 1990-an, berbasis <em>statistical learning theory</em> dan <em>VC dimension</em>.</p>
+                        </article>
+
+                        <article id="svm-panel-3" class="svm-panel" role="tabpanel" aria-labelledby="svm-tab-3" data-focus="margin" hidden>
+                            <h4 class="svm-title">Tujuan SVM</h4>
+                            <p class="svm-body">Memaksimalkan <em>margin</em> (jarak aman) antara titik terdekat dari tiap kelas, yaitu <em>support vectors</em>, agar generalisasi model lebih baik.</p>
+                        </article>
+
+                        <article id="svm-panel-4" class="svm-panel" role="tabpanel" aria-labelledby="svm-tab-4" data-focus="none" hidden>
+                            <h4 class="svm-title">Kelebihan dan Kekurangan</h4>
+                            <div class="row g-4">
+                                <div class="col-sm-6">
+                                    <h5 class="svm-sub">Kelebihan</h5>
+                                    <ul class="svm-list svm-pro">
+                                        <li>Unggul di dimensi tinggi</li>
+                                        <li>Efektif dengan <em>kernel trick</em></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h5 class="svm-sub">Kekurangan</h5>
+                                    <ul class="svm-list svm-con">
+                                        <li>Berat pada dataset besar</li>
+                                        <li>Sensitif terhadap <em>noise</em> dan <em>scaling</em></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <h3>Web Development</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-                        </div>
+                        </article>
+
+                        <article id="svm-panel-5" class="svm-panel" role="tabpanel" aria-labelledby="svm-tab-5" data-focus="sv" hidden>
+                            <h4 class="svm-title">Karakteristik Algoritma</h4>
+                            <ul class="svm-list svm-plain">
+                                <li>Mengandalkan <em>support vectors</em></li>
+                                <li>Memisahkan data linear maupun non-linear lewat <em>kernel</em> (linear, RBF, polynomial)</li>
+                                <li>Berfokus pada optimasi <em>margin</em> maksimum</li>
+                            </ul>
+                        </article>
                     </div>
-                </div>
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <div class="card border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-3 p-sm-5">
-                            <div class="feature-icon-1 bg-primary bg-gradient mb-4">
-                                <i class="bi-display"></i>
-                            </div>
-                            <h3>Digital Marketing</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-                        </div>
-                    </div>
+
+                    <!-- Ilustrasi: bagian yang dibahas di slide aktif ditonjolkan lewat data-focus -->
+                    <figure class="svm-fig" data-focus="hyperplane">
+                        <svg viewBox="0 0 320 320" role="img" aria-label="Ilustrasi hyperplane, margin, dan support vectors yang memisahkan dua kelas data">
+                            <g transform="translate(160 160) rotate(-42)">
+                                <rect class="f-margin svm-band" x="-150" y="-34" width="300" height="68"/>
+                                <line class="f-margin svm-edge" x1="-150" y1="-34" x2="150" y2="-34"/>
+                                <line class="f-margin svm-edge" x1="-150" y1="34" x2="150" y2="34"/>
+                                <line class="f-hyper svm-plane" x1="-150" y1="0" x2="150" y2="0"/>
+                                <g class="f-arrow">
+                                    <line class="svm-arrow" x1="-105" y1="-34" x2="-105" y2="34"/>
+                                    <line class="svm-arrow" x1="-111" y1="-34" x2="-99" y2="-34"/>
+                                    <line class="svm-arrow" x1="-111" y1="34" x2="-99" y2="34"/>
+                                </g>
+                                <g class="f-pts">
+                                    <circle class="svm-a" cx="-90" cy="-60" r="6"/>
+                                    <circle class="svm-a" cx="-40" cy="-75" r="6"/>
+                                    <circle class="svm-a" cx="10" cy="-55" r="6"/>
+                                    <circle class="svm-a" cx="60" cy="-85" r="6"/>
+                                    <circle class="svm-a" cx="-60" cy="-100" r="6"/>
+                                    <circle class="svm-a" cx="95" cy="-55" r="6"/>
+                                    <circle class="svm-a" cx="-15" cy="-34" r="6"/>
+                                    <circle class="svm-b" cx="-90" cy="60" r="6"/>
+                                    <circle class="svm-b" cx="-20" cy="70" r="6"/>
+                                    <circle class="svm-b" cx="70" cy="62" r="6"/>
+                                    <circle class="svm-b" cx="95" cy="95" r="6"/>
+                                    <circle class="svm-b" cx="0" cy="100" r="6"/>
+                                    <circle class="svm-b" cx="-50" cy="34" r="6"/>
+                                    <circle class="svm-b" cx="40" cy="34" r="6"/>
+                                </g>
+                                <g class="f-sv">
+                                    <circle class="svm-ring" cx="-15" cy="-34" r="12"/>
+                                    <circle class="svm-ring" cx="-50" cy="34" r="12"/>
+                                    <circle class="svm-ring" cx="40" cy="34" r="12"/>
+                                </g>
+                            </g>
+                        </svg>
+                        <figcaption class="svm-legend">
+                            <span><i class="svm-key svm-key-a"></i>Kelas A</span>
+                            <span><i class="svm-key svm-key-b"></i>Kelas B</span>
+                            <span><i class="svm-key svm-key-line"></i>Hyperplane</span>
+                            <span><i class="svm-key svm-key-ring"></i>Support vector</span>
+                        </figcaption>
+                    </figure>
+
+                    <p class="svm-counter" aria-hidden="true">1 / 5</p>
                 </div>
             </div>
+
+            <script>
+                // Ganti slide: klik thumbnail atau pakai tombol panah keyboard
+                (function () {
+                    var deck = document.getElementById('svm-deck');
+                    if (!deck) return;
+                    var tabs = Array.prototype.slice.call(deck.querySelectorAll('[role="tab"]'));
+                    var panels = Array.prototype.slice.call(deck.querySelectorAll('[role="tabpanel"]'));
+                    var fig = deck.querySelector('.svm-fig');
+                    var counter = deck.querySelector('.svm-counter');
+
+                    function show(i, moveFocus) {
+                        tabs.forEach(function (t, n) {
+                            t.setAttribute('aria-selected', n === i ? 'true' : 'false');
+                            t.tabIndex = n === i ? 0 : -1;
+                        });
+                        panels.forEach(function (p, n) { p.hidden = n !== i; });
+                        fig.setAttribute('data-focus', panels[i].getAttribute('data-focus'));
+                        counter.textContent = (i + 1) + ' / ' + panels.length;
+                        if (moveFocus) tabs[i].focus();
+                    }
+
+                    tabs.forEach(function (tab, i) {
+                        tab.addEventListener('click', function () { show(i, false); });
+                        tab.addEventListener('keydown', function (e) {
+                            var next = null;
+                            if (e.key === 'ArrowDown' || e.key === 'ArrowRight') next = (i + 1) % tabs.length;
+                            if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') next = (i - 1 + tabs.length) % tabs.length;
+                            if (e.key === 'Home') next = 0;
+                            if (e.key === 'End') next = tabs.length - 1;
+                            if (next !== null) { e.preventDefault(); show(next, true); }
+                        });
+                    });
+                })();
+            </script>
         </div>
 
         <!-- About -->
